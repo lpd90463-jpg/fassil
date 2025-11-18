@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    background: #0b0f1a;
+    color: white;
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar {
+    width: 230px;
+    background: #10172a;
+    border-right: 2px solid #00ffff55;
+    padding: 25px;
+}
+
+.sidebar a {
+    display: block;
+    color: #ccefff;
+    text-decoration: none;
+    padding: 12px 10px;
+    margin-bottom: 10px;
+    border-left: 3px solid transparent;
+    transition: .3s;
+}
+
+.sidebar a:hover {
+    color: #00ffff;
+    border-left: 3px solid #00ffff;
+}
+
+/* ================= CONTENT ================= */
+.content {
+    flex: 1;
+    padding: 35px;
+}
+
+/* Sections */
+.section {
+    display: none;
+    animation: fade .4s;
+}
+.section.active {
+    display: block;
+}
+
+@keyframes fade {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Saldo */
+.saldo-box {
+    margin-top: 30px;
+    background: #12203a;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 0 15px #00ffff25;
+}
+
+.saldo-box p {
+    font-size: 2rem;
+    color: #00ffff;
+}
+
+/* Formularios */
+.form-box {
+    margin-top: 30px;
+    background: #12203a;
+    padding: 25px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 0 15px #00ffff25;
+}
+
+.form-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 8px;
+}
+
+.form-box button {
+    width: 100%;
+    padding: 12px;
+    background: #00ffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #111;
+    font-weight: bold;
+}
+
+.form-box button:hover {
+    background: #00caca;
+}
+
+/* Movimientos */
+.mov-list {
+    margin-top: 20px;
+    list-style: none;
+}
+
+.mov-list li {
+    background: #12203a;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border-left: 4px solid #00ffff;
+}
