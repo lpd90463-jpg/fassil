@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0f0f1a;
+    overflow: hidden;
+  }
+  
+  /* Fondo animado */
+  .background .circulo {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: rgba(0, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: move 10s infinite alternate ease-in-out;
+  }
+  
+  .background .circulo:nth-child(1) {
+    top: 10%;
+    left: 20%;
+    background: rgba(0, 255, 255, 0.3);
+  }
+  
+  .background .circulo:nth-child(2) {
+    bottom: 15%;
+    right: 25%;
+    background: rgba(255, 0, 255, 0.3);
+  }
+  
+  .background .circulo:nth-child(3) {
+    top: 40%;
+    left: 70%;
+    background: rgba(0, 128, 255, 0.3);
+  }
+  
+  @keyframes move {
+    0% { transform: scale(1) translate(0, 0); }
+    100% { transform: scale(1.2) translate(50px, -50px); }
+  }
+  
+  /* Caja del login */
+  .login-container {
+    background: rgba(20, 20, 40, 0.85);
+    border: 2px solid #00ffff;
+    border-radius: 20px;
+    padding: 40px;
+    width: 350px;
+    box-shadow: 0 0 20px #00ffff;
+    text-align: center;
+    z-index: 2;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .logo {
+    width: 80px;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 0 10px #00ffff);
+  }
+  
+  .titulo {
+    color: #00ffff;
+    text-shadow: 0 0 15px #00ffff;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    color: #ccc;
+    display: block;
+    margin: 10px 0 5px;
+    text-align: left;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #00ffff;
+    background: transparent;
+    color: white;
+    outline: none;
+    transition: 0.3s;
+  }
+  
+  input:focus {
+    border-bottom: 2px solid #00ffcc;
+    box-shadow: 0 0 10px #00ffcc;
+  }
+  
+  button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    background: #00ffff;
+    color: #0f0f1a;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  button:hover {
+    background: #0f0f1a;
+    color: #00ffff;
+    box-shadow: 0 0 20px #00ffff;
+  }
+  
+  /* Responsivo */
+  @media (max-width: 600px) {
+    .login-container {
+      width: 90%;
+      padding: 25px;
+    }
+  }
+  
