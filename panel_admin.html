@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel Admin</title>
+    <link rel="stylesheet" href="panel_admin.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <div class="logo">
+        <img src="logo.jpg" alt="Logo Banco">
+        <h2>Administrador</h2>
+    </div>
+
+    <nav>
+        <a href="#" onclick="mostrarSeccion('seccionCuentas')">🏦 Cuentas</a>
+        <a href="#" onclick="mostrarSeccion('seccionClientes')">👥 Clientes</a>
+        <a href="#" onclick="mostrarSeccion('seccionTransacciones')">💸 Transacciones</a>
+        <a href="#" onclick="logout()">🚪 Cerrar sesión</a>
+    </nav>
+</div>
+
+<div class="contenido">
+
+    <!-- SECCIÓN CUENTAS -->
+    <div id="seccionCuentas" class="seccion">
+        <h1>Cuentas registradas</h1>
+        <div id="listaCuentas"></div>
+    </div>
+
+    <!-- SECCIÓN CLIENTES -->
+    <div id="seccionClientes" class="seccion" style="display:none;">
+        <h1>Clientes</h1>
+        <div id="listaClientes"></div>
+    </div>
+
+    <!-- SECCIÓN TRANSACCIONES -->
+    <div id="seccionTransacciones" class="seccion" style="display:none;">
+        <h1>Historial de transacciones</h1>
+        <div id="listaTransaccionesAdmin"></div>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+<script>
+    // Asegurarse de que mostrarSeccion exista globalmente
+    window.mostrarSeccion = window.mostrarSeccion || function(id) {
+        console.log("mostrarSeccion llamada:", id);
+        document.querySelectorAll(".seccion").forEach(s => s.style.display = "none");
+        const target = document.getElementById(id);
+        if (target) target.style.display = "block";
+
+        if (id === "seccionCuentas") {
+            if (typeof renderCuentas === "function") renderCuentas();
+        }
+        if (id === "seccionClientes") {
+            if (typeof renderClientes === "function") renderClientes();
+        }
+        if (id === "seccionTransacciones") {
+            if (typeof renderTransaccionesAdmin === "function") renderTransaccionesAdmin();
+        }
+    }
+
+    // Mostrar por defecto la sección Cuentas al cargar
+    document.addEventListener("DOMContentLoaded", () => {
+        mostrarSeccion("seccionCuentas");
+    });
+</script>
+</body>
+</html>
