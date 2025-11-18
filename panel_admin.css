@@ -1,0 +1,156 @@
+/* ======== ESTILO GENERAL ======== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  body {
+    background: #0d0f1a;
+    color: #e0e0e0;
+    display: flex;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* ======== SIDEBAR NEÓN ======== */
+  .sidebar {
+    width: 260px;
+    background: rgba(15, 20, 35, 0.95);
+    border-right: 2px solid #00ffff;
+    box-shadow: 0 0 20px #00ffff;
+    padding: 20px;
+    position: fixed;
+    height: 100vh;
+  }
+  
+  .logo {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  
+  .logo img {
+    width: 70px;
+    filter: drop-shadow(0 0 10px #00ffff);
+  }
+  
+  .logo h2 {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+    margin-top: 10px;
+  }
+  
+  nav a {
+    display: block;
+    text-decoration: none;
+    color: #a6ffff;
+    padding: 12px;
+    margin: 8px 0;
+    border-left: 3px solid transparent;
+    transition: 0.3s;
+    font-size: 17px;
+  }
+  
+  nav a:hover {
+    background: rgba(0, 255, 255, 0.15);
+    border-left: 3px solid #00ffff;
+    padding-left: 18px;
+    text-shadow: 0 0 10px #00ffff;
+  }
+  
+  /* ======== CONTENIDO PRINCIPAL ======== */
+  .contenido {
+    margin-left: 260px;
+    padding: 30px;
+    width: calc(100% - 260px);
+  }
+  
+  .contenido h1 {
+    color: #00ffff;
+    text-shadow: 0 0 12px #00ffff;
+    margin-bottom: 10px;
+  }
+  
+  .contenido p {
+    color: #c8e6ff;
+  }
+  
+  /* ======== TARJETAS ESTADÍSTICAS ======== */
+  .tarjetas {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    flex: 1;
+    min-width: 230px;
+    background: rgba(20, 30, 50, 0.85);
+    border: 2px solid #00ffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px #00ffff;
+    transition: 0.3s;
+  }
+  
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 25px #00ffff;
+  }
+  
+  .card h3 {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+    margin-bottom: 15px;
+  }
+  
+  .card p {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 12px #ffffffcc;
+    text-align: center;
+  }
+  
+  /* ======== RESPONSIVO ======== */
+  @media (max-width: 800px) {
+    .contenido {
+      margin-left: 0;
+      width: 100%;
+    }
+  
+    .sidebar {
+      display: none;
+    }
+  
+    .tarjetas {
+      flex-direction: column;
+    }
+  }
+  .card {
+    background: rgba(0,255,255,0.08);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #00ffff55;
+}
+
+.card button {
+    margin: 10px 5px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.card button:hover {
+    box-shadow: 0 0 10px #00ffff;
+}
+
+.danger {
+    background: #ff3b3b;
+    color: white;
+}
