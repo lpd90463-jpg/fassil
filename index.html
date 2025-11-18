@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Banco Fassil</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #0a0a0a;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            color: white;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        h1 {
+            font-size: 40px;
+            margin-bottom: 40px;
+            text-shadow: 0 0 10px #00eaff;
+        }
+
+        /* BOTÓN NEÓN */
+        .neon-btn {
+            padding: 15px 40px;
+            font-size: 24px;
+            color: #00eaff;
+            border: 2px solid #00eaff;
+            background: transparent;
+            border-radius: 10px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .neon-btn:hover {
+            color: #000;
+            background: #00eaff;
+            box-shadow: 
+                0 0 10px #00eaff,
+                0 0 20px #00eaff,
+                0 0 40px #00eaff,
+                0 0 80px #00eaff;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>BANCO FASSIL</h1>
+        <button class="neon-btn" onclick="window.location.href='login.html'">
+            Iniciar
+        </button>
+    </div>
+
+</body>
+</html>
