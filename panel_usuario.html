@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel Usuario</title>
+    <link rel="stylesheet" href="panel_usuario.css">
+    <script src="script.js"></script> <!-- Corregido: script.js debe ir con <script>, no como stylesheet -->
+</head>
+<body onload="loadUserPanel()">
+
+<div class="sidebar">
+    <h2>👤 Usuario</h2>
+    <a href="#" onclick="showSection('home')">🏠 Inicio</a>
+    <a href="#" onclick="showSection('deposit')">💰 Depositar</a>
+    <a href="#" onclick="showSection('withdraw')">💸 Retirar</a>
+    <a href="#" onclick="showSection('history')">📄 Movimientos</a>
+    <a href="#" onclick="logout()">🚪 Cerrar sesión</a>
+</div>
+
+<div class="content">
+
+    <!-- ================= HOME ================= -->
+    <section id="home" class="section active">
+        <h1>Bienvenido, <span id="userName"></span></h1>
+        <div class="saldo-box">
+            <h2>Saldo actual:</h2>
+            <p id="saldoActual">Bs 0</p>
+        </div>
+    </section>
+
+    <!-- ================= DEPOSIT ================= -->
+    <section id="deposit" class="section">
+        <h1>💰 Depositar</h1>
+        <div class="form-box">
+            <input type="number" id="montoDeposito" placeholder="Monto a depositar">
+            <button onclick="usuarioDepositar()">Depositar</button>
+        </div>
+    </section>
+
+    <!-- ================= WITHDRAW ================= -->
+    <section id="withdraw" class="section">
+        <h1>💸 Retirar</h1>
+        <div class="form-box">
+            <input type="number" id="montoRetiro" placeholder="Monto a retirar">
+            <button onclick="usuarioRetirar()">Retirar</button>
+        </div>
+    </section>
+
+    <!-- ================= HISTORY ================= -->
+    <section id="history" class="section">
+        <h1>📄 Historial</h1>
+        <ul id="movimientosUsuario" class="mov-list">
+        </ul>
+    </section>
+
+</div>
+
+<!-- Contenedor global para notificaciones -->
+<div id="toastContainer" style="
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+"></div>
+
+<script>
+    // Cambiar entre secciones del usuario
+    function showSection(name) {
+        document.querySelectorAll(".section").forEach(sec => sec.classList.remove("active"));
+        document.getElementById(name).classList.add("active");
+    }
+</script>
+
+</body>
+</html>
